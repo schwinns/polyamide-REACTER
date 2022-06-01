@@ -1,0 +1,17 @@
+    # -- Non-bonded (Pair) interactions --
+    #          atomType1 atomType2  parameter-list (epsilon, sigma)
+    pair_coeff  @/atom:SPCE/O  @/atom:SPCE/O    0.1553 3.166
+    pair_coeff  @/atom:SPCE/H  @/atom:SPCE/H    0.0    2.058
+    # (mixing rules determine interactions between types @atom:O and @atom:H)
+    
+    # -- Bonded interactions --
+    #             bondType   parameter list (k_bond, r0)
+    bond_coeff   @/bond:SPCE/OH    1000.00 1.0
+    #             angleType  parameter-list (k_theta, theta0)
+    angle_coeff  @/angle:SPCE/HOH  1000.0   109.47
+    
+
+    # Group definitions and constraints can also go in the "In Settings" section
+    group spce type  @/atom:SPCE/O  @/atom:SPCE/H
+    fix fRATTLE spce rattle 0.0001 10 100 b @/bond:SPCE/OH a @/angle:SPCE/HOH
+    # (lammps quirk: Remember to "unfix fRATTLE" during minimization.)

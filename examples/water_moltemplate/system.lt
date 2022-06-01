@@ -1,0 +1,12 @@
+# -- file "system.lt" -- 
+import "spce_simple.lt"
+# wat = new SPCE [1000]
+wat = new SPCE [10].move(0.0, 0.0, 3.1034)
+               [10].move(0.0, 3.1034, 0.0)
+               [10].move(3.1034, 0.0, 0.0)
+
+write_once("Data Boundary") {
+    0.0 31.034 xlo xhi
+    0.0 31.034 ylo yhi
+    0.0 31.034 zlo zhi
+}
