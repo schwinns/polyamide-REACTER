@@ -1,146 +1,190 @@
 # Script to write moltemplate input files
 
 # Imports
-import numpy as np
+from topology_class import Topology
+import mdtraj as md
 
-def remove_comments(line):
-    return line.split(';')[0]
+cwd = '/home/nate/Projects/polymer_membrane/polyamide-REACTER/examples/MPD_TMC_moltemplate/'
+gro = 'MPD-L.gro'
+top = 'MPD-L.top'
 
-class Topology():
+output = 'MPD-L.lt'
 
-    def __init__(self, topology_file):
+coordinate = md.load(cwd + gro, top=cwd + gro) # mdtraj atoms are 0-indexed
+topology = Topology(cwd + top) # Topology atoms are 1-indexed
+coords = coordinate.xyz[0,:,:]
 
-        f = open(topology_file, 'r')
+# Write the name of Moltemplate object
+mol = output.split('.')[0]
+out = open(cwd + output, 'w')
+out.write(mol + ' {\n\n')
 
-        # HEADER INFORMATION #
-        for line in f:
-            # Go to defaults directive
-            if line.startswith('[ defaults ]'):
-                break
+# Data Atoms section
+out.write('\twrite("Data Atoms") {\n')
+out.write('\t\t# atomID\tmolID\tatomType\tcharge\tx\ty\tz\n')
 
-        # DEFAULTS DIRECTIVE #
-        for line in f:
-            # Go to atomtypes directive
-            if line.startswith('[ atomtypes ]'):
-                break
-            
-            # Ignore comments and blank lines
-            elif not line.startswith(';') and len(line.split()) != 0:
+i = 0
+for atom in coordinate.top.atoms:
 
-                line = remove_comments(line)
-                if line.split()[2] == 'yes':
-                    gen_pairs = True
-                else:
-                    gen_pairs = False
+    top_atom = topology.atoms[i+1]
 
-                self.defaults_directive = {
-                    'nbfunc'    : int(line.split()[0]),
-                    'comb-rule' : int(line.split()[1]),
-                    'gen-pairs' : gen_pairs,
-                    'fudgeLJ'   : float(line.split()[3]),
-                    'fudgeQQ'   : float(line.split()[4])
-                }
+    atomID = top_atom['atom_name']
+    molID = top_atom['residue']
+    atomType = top_atom['type']
+    charge = top_atom['charge']
+    x = coords[i,0]*10
+    y = coords[i,1]*10
+    z = coords[i,2]*10
 
-        # ATOMTYPES DIRECTIVE #
-        self.atomtypes = {}
-        for line in f:
-            # Go to moleculetype directive
-            if line.startswith('[ moleculetype ]'):
-                break
+    line = '\t\t$atom:{:<2}\t$mol:{}\t@atom:{}\t{}\t{}\t{}\t{}\n'.format(atomID, molID, atomType, charge, x, y, z)
+    out.write(line)
+    i += 1
 
-            # Ignore comments and blank lines
-            elif not line.startswith(';') and len(line.split()) != 0:
+out.write('\t}\n\n')
 
-                line = remove_comments(line)
-                atom = line.split()
-                self.atomtypes[atom[0]] = {
-                    'at_num'  : int(atom[1]),
-                    'mass'    : float(atom[2]),
-                    'charge'  : float(atom[3]),
-                    'ptype'   : atom[4],
-                    'sigma'   : float(atom[5]),
-                    'epsilon' : float(atom[6]) 
-                }
+# Data Masses section
+out.write('\twrite_once("Data Masses") {\n')
 
-        # MOLECULETYPE DIRECTIVE #
-        self.moleculetype = {}
-        for line in f:
-            # Go to atoms directive
-            if line.startswith('[ atoms ]'):
-                break
+i = 0
+for atom in coordinate.top.atoms:
+    
+    i += 1
+    top_atom = topology.atoms[i]
 
-            # Ignore comments and blank lines
-            elif not line.startswith(';') and len(line.split()) != 0:
+    atomType = top_atom['type']
+    mass = top_atom['mass']
 
-                line = remove_comments(line)
-                self.moleculetype[line.split()[0]] = {
-                    'nrexcl'  : int(line.split()[1])
-                }
+    line = '\t\t@atom:{:<2}\t{}\n'.format(atomType, mass)
+    out.write(line)
 
-        # ATOMS DIRECTIVE #
-        self.atoms = {}
-        for line in f:
-            # Go to bonds directive
-            if line.startswith('[ bonds ]'):
-                break
+out.write('\t}\n\n')
 
-            # Ignore comments and blank lines
-            elif not line.startswith(';') and len(line.split()) != 0:
+# Data Bonds section
+out.write('\twrite("Data Bonds") {\n')
+out.write('\t\t# bondID\tbondType\tatomID1\tatomID2\n')
 
-                line = remove_comments(line)
-                atom = line.split()
-                atom_id = int(atom[0])
-                self.atoms[atom_id] = {
-                    'type'      : atom[1],
-                    'resnr'     : int(atom[2]),
-                    'residue'   : atom[3],
-                    'atom_name' : atom[4],
-                    'cgnr'      : int(atom[5]),
-                    'charge'    : float(atom[6]),
-                    'mass'      : float(atom[7])
-                }
+for i in topology.bonds:
 
-        # BONDS DIRECTIVE #
-        self.bonds = {}
-        bond_id = 0
-        for line in f:
-            # Go to angles directive
-            if line.startswith('[ pairs ]'):
-                break
+    bond = topology.bonds[i]
 
-            # Ignore comments and blank lines
-            elif not line.startswith(';') and len(line.split()) != 0:
+    a1 = bond['a1']
+    a2 = bond['a2']
+    
+    a1_name = topology.atoms[a1]['atom_name']
+    a2_name = topology.atoms[a2]['atom_name']
+    
+    element1 = a1_name.strip('0123456789')
+    element2 = a2_name.strip('0123456789')
+    
+    bond_name = element1 + element2
 
-                line = remove_comments(line)
-                bond = line.split()
-                bond_id += 1
-                self.bonds[bond_id] = {
-                    'a1'     : int(bond[0]),
-                    'a2'     : int(bond[1]),
-                    'func'   : int(bond[2]),
-                    'params' : [float(b) for b in bond[3:]]
-                }
+    line = '\t\t$bond:b{}\t@bond:{}\t$atom:{:<2}\t$atom:{:<2}\n'.format(i, bond_name, a1_name, a2_name)
+    out.write(line)
+
+out.write('\t}\n\n')
+
+# Data Angles section
+out.write('\twrite("Data Angles") {\n')
+out.write('\t\t# angleID\tangleType\tatomID1\tatomID2\tatomID3\n')
+
+for i in topology.angles:
+
+    angle = topology.angles[i]
+
+    a1 = angle['a1']
+    a2 = angle['a2']
+    a3 = angle['a3']
+
+    a1_name = topology.atoms[a1]['atom_name']
+    a2_name = topology.atoms[a2]['atom_name']
+    a3_name = topology.atoms[a3]['atom_name']
+    
+    element1 = a1_name.strip('0123456789')
+    element2 = a2_name.strip('0123456789')
+    element3 = a3_name.strip('0123456789')
+    
+    angle_name = element1 + element2 + element3
+
+    line = '\t\t$angle:a{}\t@angle:{}\t$atom:{:<2}\t$atom:{:<2}\t$atom:{:<2}\n'.format(i, angle_name, a1_name, a2_name, a3_name)
+    out.write(line)
+
+out.write('\t}\n\n')
+
+# Data Dihedrals section
+out.write('\twrite("Data Dihedrals") {\n')
+out.write('\t\t# dihID\tdihType\tatomID1\tatomID2\tatomID3\tatomID4\n')
+
+for i in topology.dihedrals:
+
+    dih = topology.dihedrals[i]
+
+    a1 = dih['a1']
+    a2 = dih['a2']
+    a3 = dih['a3']
+    a4 = dih['a4']
+    
+    a1_name = topology.atoms[a1]['atom_name']
+    a2_name = topology.atoms[a2]['atom_name']
+    a3_name = topology.atoms[a3]['atom_name']
+    a4_name = topology.atoms[a4]['atom_name']
+    
+    element1 = a1_name.strip('0123456789')
+    element2 = a2_name.strip('0123456789')
+    element3 = a3_name.strip('0123456789')
+    element4 = a4_name.strip('0123456789')
+
+    dih_name = element1 + element2 + element3 + element4
+    if dih['func'] in [2,4]: # mark improper dihedrals
+        dih_name += '_imp'
+    
+    line = '\t\t$dihedral:a{}\t@dihedral:{}\t$atom:{:<2}\t$atom:{:<2}\t$atom:{:<2}\t$atom:{:<2}\n'.format(i, dih_name, a1_name, a2_name, a3_name, a4_name)
+    out.write(line)
+
+out.write('\t}\n\n')
+
+# In Settings section
+out.write('\twrite_once("In Settings") {\n\n')
+
+#    Pair coefficients
+out.write('\t\t# Pair Coeffs\n')
+out.write('\t\t# \tatomType1\tatomType2\tparams (epsilon, sigma)\n')
+for i in topology.atomtypes:
+
+    atype = topology.atomtypes[i]
+
+    eps = atype['epsilon']/4.184 # units need to be kcal/mol
+    sig = atype['sigma']*10      # units need to be Angstroms
+
+    line = '\t\tpair_coeff\t@atom:{}\t@atom:{}\t{}\t{}\n'.format(i, i, eps, sig)
+    out.write(line)
+
+#   Bond Coefficients (assuming all bonds are harmonic)
+out.write('\n\t\t# Bond Coeffs\n')
+out.write('\t\t# \tbondType\tparams (k_bond, r0)\n')
+for i in topology.bonds:
+
+    bond = topology.bonds[i]
+
+    a1 = bond['a1']
+    a2 = bond['a2']
+    
+    a1_name = topology.atoms[a1]['atom_name']
+    a2_name = topology.atoms[a2]['atom_name']
+    
+    element1 = a1_name.strip('0123456789')
+    element2 = a2_name.strip('0123456789')
+    
+    bond_name = element1 + element2
+
+    k_bond = bond['params'][1]/4.184/10**2 # units need to be kcal/mol/Ang^2
+    r0 = bond['params'][0]*10              # units need to be Angstroms
+
+    line = '\t\tbond_coeff\t@bond:{}\t{}\t{}\n'.format(bond_name, k_bond, r0)
+    out.write(line)
 
 
-################# TESTING #################
-topology_file = './MPD_TMC_moltemplate/MPD-L.top'
-MPD = Topology(topology_file)
 
-print('self.defaults_directive')
-print('\t', MPD.defaults_directive)
 
-print('self.atomtypes')
-for a in MPD.atomtypes:
-    print('\t', a, MPD.atomtypes[a])
 
-print('self.moleculetype')
-for m in MPD.moleculetype:
-    print('\t', m, MPD.moleculetype[m])
 
-print('self.atoms')
-for a in MPD.atoms:
-    print('\t', a, MPD.atoms[a])
-
-print('self.bonds')
-for b in MPD.bonds:
-    print('\t', b, MPD.bonds[b])
+out.write('\t}\n\n')
