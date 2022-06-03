@@ -1,4 +1,6 @@
-MPD-L {
+import "gaff.lt"
+
+MPD-L inherits GAFF {
 
 	write("Data Atoms") {
 		# atomID	molID	atomType	charge	x	y	z
@@ -18,127 +20,22 @@ MPD-L {
 		$atom:H5	$mol:UNL	@atom:hn	0.017	7.940000295639038	-1.6599999368190765	-0.27000000700354576
 	}
 
-	write_once("Data Masses") {
-		@atom:n2	14.01
-		@atom:ca	12.01
-		@atom:ca	12.01
-		@atom:ca	12.01
-		@atom:ca	12.01
-		@atom:ca	12.01
-		@atom:ca	12.01
-		@atom:ha	1.008
-		@atom:ha	1.008
-		@atom:ha	1.008
-		@atom:ha	1.008
-		@atom:hn	1.008
-		@atom:n2	14.01
-		@atom:hn	1.008
-	}
-
-	write("Data Bonds") {
+	write("Data Bond List") {
 		# bondID	bondType	atomID1	atomID2
-		$bond:b1	@bond:NC	$atom:N 	$atom:C1
-		$bond:b2	@bond:CC	$atom:C 	$atom:C1
-		$bond:b3	@bond:CC	$atom:C 	$atom:C2
-		$bond:b4	@bond:CC	$atom:C1	$atom:C5
-		$bond:b5	@bond:CC	$atom:C2	$atom:C3
-		$bond:b6	@bond:CC	$atom:C3	$atom:C4
-		$bond:b7	@bond:CC	$atom:C4	$atom:C5
-		$bond:b8	@bond:CN	$atom:C4	$atom:N1
-		$bond:b9	@bond:NH	$atom:N 	$atom:H4
-		$bond:b10	@bond:CH	$atom:C 	$atom:H 
-		$bond:b11	@bond:CH	$atom:C2	$atom:H1
-		$bond:b12	@bond:CH	$atom:C3	$atom:H2
-		$bond:b13	@bond:CH	$atom:C5	$atom:H3
-		$bond:b14	@bond:NH	$atom:N1	$atom:H5
+		$bond:NC1 	$atom:N 	$atom:C1
+		$bond:CC1 	$atom:C 	$atom:C1
+		$bond:CC2 	$atom:C 	$atom:C2
+		$bond:C1C5	$atom:C1	$atom:C5
+		$bond:C2C3	$atom:C2	$atom:C3
+		$bond:C3C4	$atom:C3	$atom:C4
+		$bond:C4C5	$atom:C4	$atom:C5
+		$bond:C4N1	$atom:C4	$atom:N1
+		$bond:NH4 	$atom:N 	$atom:H4
+		$bond:CH  	$atom:C 	$atom:H 
+		$bond:C2H1	$atom:C2	$atom:H1
+		$bond:C3H2	$atom:C3	$atom:H2
+		$bond:C5H3	$atom:C5	$atom:H3
+		$bond:N1H5	$atom:N1	$atom:H5
 	}
 
-	write("Data Angles") {
-		# angleID	angleType	atomID1	atomID2	atomID3
-		$angle:a1	@angle:NCC	$atom:N 	$atom:C1	$atom:C 
-		$angle:a2	@angle:NCC	$atom:N 	$atom:C1	$atom:C5
-		$angle:a3	@angle:CCC	$atom:C 	$atom:C1	$atom:C5
-		$angle:a4	@angle:CCC	$atom:C 	$atom:C2	$atom:C3
-		$angle:a5	@angle:CCC	$atom:C1	$atom:C 	$atom:C2
-		$angle:a6	@angle:CCC	$atom:C1	$atom:C5	$atom:C4
-		$angle:a7	@angle:CCC	$atom:C2	$atom:C3	$atom:C4
-		$angle:a8	@angle:CCC	$atom:C3	$atom:C4	$atom:C5
-		$angle:a9	@angle:CCN	$atom:C3	$atom:C4	$atom:N1
-		$angle:a10	@angle:CCN	$atom:C5	$atom:C4	$atom:N1
-		$angle:a11	@angle:CCH	$atom:C 	$atom:C2	$atom:H1
-		$angle:a12	@angle:CNH	$atom:C1	$atom:N 	$atom:H4
-		$angle:a13	@angle:CCH	$atom:C1	$atom:C 	$atom:H 
-		$angle:a14	@angle:CCH	$atom:C1	$atom:C5	$atom:H3
-		$angle:a15	@angle:CCH	$atom:C2	$atom:C 	$atom:H 
-		$angle:a16	@angle:CCH	$atom:C2	$atom:C3	$atom:H2
-		$angle:a17	@angle:CCH	$atom:C3	$atom:C2	$atom:H1
-		$angle:a18	@angle:CCH	$atom:C4	$atom:C3	$atom:H2
-		$angle:a19	@angle:CCH	$atom:C4	$atom:C5	$atom:H3
-		$angle:a20	@angle:CNH	$atom:C4	$atom:N1	$atom:H5
-	}
-
-	write("Data Dihedrals") {
-		# dihID	dihType	atomID1	atomID2	atomID3	atomID4
-		$dihedral:a1	@dihedral:NCCC	$atom:N 	$atom:C1	$atom:C 	$atom:C2
-		$dihedral:a2	@dihedral:NCCC	$atom:N 	$atom:C1	$atom:C5	$atom:C4
-		$dihedral:a3	@dihedral:CCCC	$atom:C 	$atom:C1	$atom:C5	$atom:C4
-		$dihedral:a4	@dihedral:CCCC	$atom:C 	$atom:C2	$atom:C3	$atom:C4
-		$dihedral:a5	@dihedral:CCCC	$atom:C1	$atom:C 	$atom:C2	$atom:C3
-		$dihedral:a6	@dihedral:CCCC	$atom:C1	$atom:C5	$atom:C4	$atom:C3
-		$dihedral:a7	@dihedral:CCCN	$atom:C1	$atom:C5	$atom:C4	$atom:N1
-		$dihedral:a8	@dihedral:CCCC	$atom:C2	$atom:C 	$atom:C1	$atom:C5
-		$dihedral:a9	@dihedral:CCCC	$atom:C2	$atom:C3	$atom:C4	$atom:C5
-		$dihedral:a10	@dihedral:CCCN	$atom:C2	$atom:C3	$atom:C4	$atom:N1
-		$dihedral:a11	@dihedral:NCCC_imp	$atom:N 	$atom:C1	$atom:C5	$atom:C 
-		$dihedral:a12	@dihedral:CCCN_imp	$atom:C3	$atom:C5	$atom:C4	$atom:N1
-		$dihedral:a13	@dihedral:NCCH	$atom:N 	$atom:C1	$atom:C 	$atom:H 
-		$dihedral:a14	@dihedral:NCCH	$atom:N 	$atom:C1	$atom:C5	$atom:H3
-		$dihedral:a15	@dihedral:HNCC	$atom:H4	$atom:N 	$atom:C1	$atom:C 
-		$dihedral:a16	@dihedral:CCCH	$atom:C 	$atom:C1	$atom:C5	$atom:H3
-		$dihedral:a17	@dihedral:CCCH	$atom:C 	$atom:C2	$atom:C3	$atom:H2
-		$dihedral:a18	@dihedral:CCCH	$atom:C1	$atom:C 	$atom:C2	$atom:H1
-		$dihedral:a19	@dihedral:CCCH	$atom:C3	$atom:C2	$atom:C 	$atom:H 
-		$dihedral:a20	@dihedral:CCCH	$atom:C3	$atom:C4	$atom:C5	$atom:H3
-		$dihedral:a21	@dihedral:CCNH	$atom:C3	$atom:C4	$atom:N1	$atom:H5
-		$dihedral:a22	@dihedral:CCCH	$atom:C4	$atom:C3	$atom:C2	$atom:H1
-		$dihedral:a23	@dihedral:HNCC	$atom:H4	$atom:N 	$atom:C1	$atom:C5
-		$dihedral:a24	@dihedral:CCCH	$atom:C5	$atom:C1	$atom:C 	$atom:H 
-		$dihedral:a25	@dihedral:CCCH	$atom:C5	$atom:C4	$atom:C3	$atom:H2
-		$dihedral:a26	@dihedral:CCNH	$atom:C5	$atom:C4	$atom:N1	$atom:H5
-		$dihedral:a27	@dihedral:HCCH	$atom:H 	$atom:C 	$atom:C2	$atom:H1
-		$dihedral:a28	@dihedral:HCCH	$atom:H1	$atom:C2	$atom:C3	$atom:H2
-		$dihedral:a29	@dihedral:HCCN	$atom:H2	$atom:C3	$atom:C4	$atom:N1
-		$dihedral:a30	@dihedral:HCCN	$atom:H3	$atom:C5	$atom:C4	$atom:N1
-		$dihedral:a31	@dihedral:CCCH_imp	$atom:C1	$atom:C2	$atom:C 	$atom:H 
-		$dihedral:a32	@dihedral:CCCH_imp	$atom:C 	$atom:C3	$atom:C2	$atom:H1
-		$dihedral:a33	@dihedral:CCCH_imp	$atom:C2	$atom:C4	$atom:C3	$atom:H2
-		$dihedral:a34	@dihedral:CCCH_imp	$atom:C1	$atom:C4	$atom:C5	$atom:H3
-	}
-
-	write_once("In Settings") {
-
-		# Pair Coeffs
-		# 	atomType1	atomType2	params (epsilon, sigma)
-		pair_coeff	@atom:n2	@atom:n2	0.17	3.2499985
-		pair_coeff	@atom:ca	@atom:ca	0.086	3.3996695
-		pair_coeff	@atom:ha	@atom:ha	0.014999999999999998	2.5996425
-		pair_coeff	@atom:hn	@atom:hn	0.015700000000000002	1.0690785
-
-		# Bond Coeffs
-		# 	bondType	params (k_bond, r0)
-		bond_coeff	@bond:NC	1103.2	1.303
-		bond_coeff	@bond:CC	922.1999999999998	1.3983999999999999
-		bond_coeff	@bond:CC	922.1999999999998	1.3983999999999999
-		bond_coeff	@bond:CC	922.1999999999998	1.3983999999999999
-		bond_coeff	@bond:CC	922.1999999999998	1.3983999999999999
-		bond_coeff	@bond:CC	922.1999999999998	1.3983999999999999
-		bond_coeff	@bond:CC	922.1999999999998	1.3983999999999999
-		bond_coeff	@bond:CN	1103.2	1.303
-		bond_coeff	@bond:NH	771.2	1.0230000000000001
-		bond_coeff	@bond:CH	691.6	1.086
-		bond_coeff	@bond:CH	691.6	1.086
-		bond_coeff	@bond:CH	691.6	1.086
-		bond_coeff	@bond:CH	691.6	1.086
-		bond_coeff	@bond:NH	771.2	1.0230000000000001
-	}
-
+} # MPD-L
