@@ -1,0 +1,13 @@
+
+import "MPD_TMC_react.lt"
+
+# Periodic boundary conditions:
+write_once("Data Boundary") {
+   0.0  20  xlo xhi
+   0.0  20  ylo yhi
+   0.0  20  zlo zhi
+}
+
+# Add bonded reactive sites for MPD and TMC
+mpd_tmc = new MPD_TMC_react
+

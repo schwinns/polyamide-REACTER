@@ -1,0 +1,8 @@
+$/improper:bytype1 @/improper:GAFF/X-X-ca-ha $/atom:mpd/C $/atom:mpd/C3 $/atom:mpd/C2 $/atom:mpd/H1
+$/improper:bytype2 @/improper:GAFF/X-X-ca-ha $/atom:mpd/C1 $/atom:mpd/C2 $/atom:mpd/C $/atom:mpd/H
+$/improper:bytype3 @/improper:GAFF/X-X-ca-ha $/atom:mpd/C1 $/atom:mpd/C4 $/atom:mpd/C5 $/atom:mpd/H3
+$/improper:bytype4 @/improper:GAFF/X-X-ca-ha $/atom:mpd/C2 $/atom:mpd/C4 $/atom:mpd/C3 $/atom:mpd/H2
+$/improper:bytype5 @/improper:GAFF/X-X-ca-ha $/atom:tmc/C1 $/atom:tmc/C3 $/atom:tmc/C $/atom:tmc/H
+$/improper:bytype6 @/improper:GAFF/X-X-ca-ha $/atom:tmc/C1 $/atom:tmc/C5 $/atom:tmc/C2 $/atom:tmc/H1
+$/improper:bytype7 @/improper:GAFF/X-X-ca-ha $/atom:tmc/C3 $/atom:tmc/C5 $/atom:tmc/C4 $/atom:tmc/H2
+$/improper:bytype8 @/improper:GAFF/ca-ca-ca-c2 $/atom:tmc/C $/atom:tmc/C2 $/atom:tmc/C1 $/atom:tmc/C8

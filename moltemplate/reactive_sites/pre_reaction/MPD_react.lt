@@ -1,0 +1,30 @@
+import "gaff.lt"
+
+MPD_react inherits GAFF {
+
+	write("Data Atoms") {
+		# atomID	molID	atomType	charge	x	y	z
+		$atom:N 	$mol:UNL	@atom:n2	-0.575	2.849999964237213	0.7999999821186066	-0.07000000216066837
+		$atom:C 	$mol:UNL	@atom:ca	-0.456	4.900000095367432	1.7900000512599945	0.6700000166893005
+		$atom:C1	$mol:UNL	@atom:ca	0.16	4.1999998688697815	0.7199999690055847	0.12000000104308128
+		$atom:C2	$mol:UNL	@atom:ca	-0.031	6.28000020980835	1.7100000381469727	0.8600000292062759
+		$atom:C3	$mol:UNL	@atom:ca	0.16	6.269999742507935	-0.5299999937415123	-0.07000000216066837
+		$atom:C4	$mol:UNL	@atom:ca	-0.425	4.8899999260902405	-0.4399999976158142	-0.2500000037252903
+		$atom:H 	$mol:UNL	@atom:ha	0.04	4.370000064373016	2.7000001072883606	0.9700000286102295
+		$atom:H1	$mol:UNL	@atom:ha	0.075	4.350000023841858	-1.2800000607967377	-0.689999982714653
+		$atom:H2	$mol:UNL	@atom:hn	0.017	2.409999966621399	1.6599999368190765	0.2199999988079071
+	}
+
+	write("Data Bond List") {
+		# bondID	bondType	atomID1	atomID2
+		$bond:NC1 	$atom:N 	$atom:C1
+		$bond:CC1 	$atom:C 	$atom:C1
+		$bond:CC2 	$atom:C 	$atom:C2
+		$bond:C1C4	$atom:C1	$atom:C4
+		$bond:C3C4	$atom:C3	$atom:C4
+		$bond:NH2 	$atom:N 	$atom:H2
+		$bond:CH  	$atom:C 	$atom:H 
+		$bond:C4H1	$atom:C4	$atom:H1
+	}
+
+} # MPD_react

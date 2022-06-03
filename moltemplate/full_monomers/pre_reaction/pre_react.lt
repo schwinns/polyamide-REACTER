@@ -1,0 +1,15 @@
+
+import "MPD-L.lt"  # <- defines the "MPD-L" molecule type
+import "TMC-L.lt"  # "TMC-L" molecule type
+
+# Periodic boundary conditions:
+write_once("Data Boundary") {
+   0.0  20  xlo xhi
+   0.0  20  ylo yhi
+   0.0  20  zlo zhi
+}
+
+# Add 1 MPD monomer
+mpd = new MPD-L
+tmc = new TMC-L
+
