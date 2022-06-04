@@ -1,0 +1,4 @@
+$/improper:bytype1 @/improper:GAFF/X-X-ca-ha $/atom:tmc/C1 $/atom:tmc/C3 $/atom:tmc/C $/atom:tmc/H
+$/improper:bytype2 @/improper:GAFF/X-X-ca-ha $/atom:tmc/C1 $/atom:tmc/C5 $/atom:tmc/C2 $/atom:tmc/H1
+$/improper:bytype3 @/improper:GAFF/X-X-ca-ha $/atom:tmc/C3 $/atom:tmc/C5 $/atom:tmc/C4 $/atom:tmc/H2
+$/improper:bytype4 @/improper:GAFF/ca-ca-ca-c2 $/atom:tmc/C $/atom:tmc/C2 $/atom:tmc/C1 $/atom:tmc/C8

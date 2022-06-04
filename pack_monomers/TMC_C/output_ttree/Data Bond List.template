@@ -1,0 +1,16 @@
+		# bondID	bondType	atomID1	atomID2
+		$/bond:tmc/CC1 	$/atom:tmc/C 	$/atom:tmc/C1
+		$/bond:tmc/CC3 	$/atom:tmc/C 	$/atom:tmc/C3
+		$/bond:tmc/C1C2	$/atom:tmc/C1	$/atom:tmc/C2
+		$/bond:tmc/C1C8	$/atom:tmc/C1	$/atom:tmc/C8
+		$/bond:tmc/C2C5	$/atom:tmc/C2	$/atom:tmc/C5
+		$/bond:tmc/C3C4	$/atom:tmc/C3	$/atom:tmc/C4
+		$/bond:tmc/C3C6	$/atom:tmc/C3	$/atom:tmc/C6
+		$/bond:tmc/C4C5	$/atom:tmc/C4	$/atom:tmc/C5
+		$/bond:tmc/C5C7	$/atom:tmc/C5	$/atom:tmc/C7
+		$/bond:tmc/C6O1	$/atom:tmc/C6	$/atom:tmc/O1
+		$/bond:tmc/C7O2	$/atom:tmc/C7	$/atom:tmc/O2
+		$/bond:tmc/C8O 	$/atom:tmc/C8	$/atom:tmc/O 
+		$/bond:tmc/CH  	$/atom:tmc/C 	$/atom:tmc/H 
+		$/bond:tmc/C2H1	$/atom:tmc/C2	$/atom:tmc/H1
+		$/bond:tmc/C4H2	$/atom:tmc/C4	$/atom:tmc/H2

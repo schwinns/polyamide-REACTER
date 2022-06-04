@@ -5831,48 +5831,42 @@ $/atom:mpd_tmc/C14   25       #"1MPD-1TMC.lt", line 31
 $/atom:mpd_tmc/O1   26       #"1MPD-1TMC.lt", line 32
 $/atom:mpd_tmc/O2   27       #"1MPD-1TMC.lt", line 33
 $/atom:mpd_tmc/O3   28       #"1MPD-1TMC.lt", line 34
-$/atom:mpd_tmc/O4   29       #"1MPD-1TMC.lt", line 35
-$/atom:mpd_tmc/N1   30       #"1MPD-1TMC.lt", line 36
-$/atom:mpd_tmc/H8   31       #"1MPD-1TMC.lt", line 37
-$/atom:mpd_tmc/H9   32       #"1MPD-1TMC.lt", line 38
-$/atom:mpd_tmc/H10   33       #"1MPD-1TMC.lt", line 39
-$/atom:mpd_tmc/H11   34       #"1MPD-1TMC.lt", line 40
+$/atom:mpd_tmc/N1   29       #"1MPD-1TMC.lt", line 35
+$/atom:mpd_tmc/H8   30       #"1MPD-1TMC.lt", line 36
+$/atom:mpd_tmc/H9   31       #"1MPD-1TMC.lt", line 37
 $/mol:mpd_tmc/UNL   1       #"1MPD-1TMC.lt", line 7
-$/bond:mpd_tmc/CC1   1       #"1MPD-1TMC.lt", line 45
-$/bond:mpd_tmc/CC2   2       #"1MPD-1TMC.lt", line 46
-$/bond:mpd_tmc/CC13   3       #"1MPD-1TMC.lt", line 47
-$/bond:mpd_tmc/C1C5   4       #"1MPD-1TMC.lt", line 48
-$/bond:mpd_tmc/C2C3   5       #"1MPD-1TMC.lt", line 49
-$/bond:mpd_tmc/C3C4   6       #"1MPD-1TMC.lt", line 50
-$/bond:mpd_tmc/C3C6   7       #"1MPD-1TMC.lt", line 51
-$/bond:mpd_tmc/C4C5   8       #"1MPD-1TMC.lt", line 52
-$/bond:mpd_tmc/C5C14   9       #"1MPD-1TMC.lt", line 53
-$/bond:mpd_tmc/C6O   10       #"1MPD-1TMC.lt", line 54
-$/bond:mpd_tmc/C6N   11       #"1MPD-1TMC.lt", line 55
-$/bond:mpd_tmc/NC8   12       #"1MPD-1TMC.lt", line 56
-$/bond:mpd_tmc/C7C8   13       #"1MPD-1TMC.lt", line 57
-$/bond:mpd_tmc/C7C9   14       #"1MPD-1TMC.lt", line 58
-$/bond:mpd_tmc/C8C12   15       #"1MPD-1TMC.lt", line 59
-$/bond:mpd_tmc/C9C10   16       #"1MPD-1TMC.lt", line 60
-$/bond:mpd_tmc/C10C11   17       #"1MPD-1TMC.lt", line 61
-$/bond:mpd_tmc/C11C12   18       #"1MPD-1TMC.lt", line 62
-$/bond:mpd_tmc/C11N1   19       #"1MPD-1TMC.lt", line 63
-$/bond:mpd_tmc/C13O3   20       #"1MPD-1TMC.lt", line 64
-$/bond:mpd_tmc/C13O4   21       #"1MPD-1TMC.lt", line 65
-$/bond:mpd_tmc/C14O1   22       #"1MPD-1TMC.lt", line 66
-$/bond:mpd_tmc/C14O2   23       #"1MPD-1TMC.lt", line 67
-$/bond:mpd_tmc/C1H   24       #"1MPD-1TMC.lt", line 68
-$/bond:mpd_tmc/C2H1   25       #"1MPD-1TMC.lt", line 69
-$/bond:mpd_tmc/C4H2   26       #"1MPD-1TMC.lt", line 70
-$/bond:mpd_tmc/NH7   27       #"1MPD-1TMC.lt", line 71
-$/bond:mpd_tmc/C7H3   28       #"1MPD-1TMC.lt", line 72
-$/bond:mpd_tmc/C9H4   29       #"1MPD-1TMC.lt", line 73
-$/bond:mpd_tmc/C10H5   30       #"1MPD-1TMC.lt", line 74
-$/bond:mpd_tmc/C12H6   31       #"1MPD-1TMC.lt", line 75
-$/bond:mpd_tmc/O2H11   32       #"1MPD-1TMC.lt", line 76
-$/bond:mpd_tmc/O4H10   33       #"1MPD-1TMC.lt", line 77
-$/bond:mpd_tmc/N1H8   34       #"1MPD-1TMC.lt", line 78
-$/bond:mpd_tmc/N1H9   35       #"1MPD-1TMC.lt", line 79
+$/bond:mpd_tmc/CC1   1       #"1MPD-1TMC.lt", line 42
+$/bond:mpd_tmc/CC2   2       #"1MPD-1TMC.lt", line 43
+$/bond:mpd_tmc/CC13   3       #"1MPD-1TMC.lt", line 44
+$/bond:mpd_tmc/C1C5   4       #"1MPD-1TMC.lt", line 45
+$/bond:mpd_tmc/C2C3   5       #"1MPD-1TMC.lt", line 46
+$/bond:mpd_tmc/C3C4   6       #"1MPD-1TMC.lt", line 47
+$/bond:mpd_tmc/C3C6   7       #"1MPD-1TMC.lt", line 48
+$/bond:mpd_tmc/C4C5   8       #"1MPD-1TMC.lt", line 49
+$/bond:mpd_tmc/C5C14   9       #"1MPD-1TMC.lt", line 50
+$/bond:mpd_tmc/C6O   10       #"1MPD-1TMC.lt", line 51
+$/bond:mpd_tmc/C6N   11       #"1MPD-1TMC.lt", line 52
+$/bond:mpd_tmc/NC8   12       #"1MPD-1TMC.lt", line 53
+$/bond:mpd_tmc/C7C8   13       #"1MPD-1TMC.lt", line 54
+$/bond:mpd_tmc/C7C9   14       #"1MPD-1TMC.lt", line 55
+$/bond:mpd_tmc/C8C12   15       #"1MPD-1TMC.lt", line 56
+$/bond:mpd_tmc/C9C10   16       #"1MPD-1TMC.lt", line 57
+$/bond:mpd_tmc/C10C11   17       #"1MPD-1TMC.lt", line 58
+$/bond:mpd_tmc/C11C12   18       #"1MPD-1TMC.lt", line 59
+$/bond:mpd_tmc/C11N1   19       #"1MPD-1TMC.lt", line 60
+$/bond:mpd_tmc/C13O2   20       #"1MPD-1TMC.lt", line 61
+$/bond:mpd_tmc/C13O3   21       #"1MPD-1TMC.lt", line 62
+$/bond:mpd_tmc/C14O1   22       #"1MPD-1TMC.lt", line 63
+$/bond:mpd_tmc/C1H   23       #"1MPD-1TMC.lt", line 64
+$/bond:mpd_tmc/C2H1   24       #"1MPD-1TMC.lt", line 65
+$/bond:mpd_tmc/C4H2   25       #"1MPD-1TMC.lt", line 66
+$/bond:mpd_tmc/NH7   26       #"1MPD-1TMC.lt", line 67
+$/bond:mpd_tmc/C7H3   27       #"1MPD-1TMC.lt", line 68
+$/bond:mpd_tmc/C9H4   28       #"1MPD-1TMC.lt", line 69
+$/bond:mpd_tmc/C10H5   29       #"1MPD-1TMC.lt", line 70
+$/bond:mpd_tmc/C12H6   30       #"1MPD-1TMC.lt", line 71
+$/bond:mpd_tmc/O3H9   31       #"1MPD-1TMC.lt", line 72
+$/bond:mpd_tmc/N1H8   32       #"1MPD-1TMC.lt", line 73
 $/angle:bytype1  1
 $/angle:bytype2  2
 $/angle:bytype3  3
@@ -5915,17 +5909,6 @@ $/angle:bytype39  39
 $/angle:bytype40  40
 $/angle:bytype41  41
 $/angle:bytype42  42
-$/angle:bytype43  43
-$/angle:bytype44  44
-$/angle:bytype45  45
-$/angle:bytype46  46
-$/angle:bytype47  47
-$/angle:bytype48  48
-$/angle:bytype49  49
-$/angle:bytype50  50
-$/angle:bytype51  51
-$/angle:bytype52  52
-$/angle:bytype53  53
 $/dihedral:bytype1  1
 $/dihedral:bytype2  2
 $/dihedral:bytype3  3
@@ -5996,15 +5979,6 @@ $/dihedral:bytype67  67
 $/dihedral:bytype68  68
 $/dihedral:bytype69  69
 $/dihedral:bytype70  70
-$/dihedral:bytype71  71
-$/dihedral:bytype72  72
-$/dihedral:bytype73  73
-$/dihedral:bytype74  74
-$/dihedral:bytype75  75
-$/dihedral:bytype76  76
-$/dihedral:bytype77  77
-$/dihedral:bytype78  78
-$/dihedral:bytype79  79
 $/improper:bytype1  1
 $/improper:bytype2  2
 $/improper:bytype3  3
@@ -6015,4 +5989,3 @@ $/improper:bytype7  7
 $/improper:bytype8  8
 $/improper:bytype9  9
 $/improper:bytype10  10
-$/improper:bytype11  11

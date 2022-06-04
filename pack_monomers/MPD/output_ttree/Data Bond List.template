@@ -1,0 +1,15 @@
+		# bondID	bondType	atomID1	atomID2
+		$/bond:mpd/NC1 	$/atom:mpd/N 	$/atom:mpd/C1
+		$/bond:mpd/CC1 	$/atom:mpd/C 	$/atom:mpd/C1
+		$/bond:mpd/CC2 	$/atom:mpd/C 	$/atom:mpd/C2
+		$/bond:mpd/C1C5	$/atom:mpd/C1	$/atom:mpd/C5
+		$/bond:mpd/C2C3	$/atom:mpd/C2	$/atom:mpd/C3
+		$/bond:mpd/C3C4	$/atom:mpd/C3	$/atom:mpd/C4
+		$/bond:mpd/C4C5	$/atom:mpd/C4	$/atom:mpd/C5
+		$/bond:mpd/C4N1	$/atom:mpd/C4	$/atom:mpd/N1
+		$/bond:mpd/NH4 	$/atom:mpd/N 	$/atom:mpd/H4
+		$/bond:mpd/CH  	$/atom:mpd/C 	$/atom:mpd/H 
+		$/bond:mpd/C2H1	$/atom:mpd/C2	$/atom:mpd/H1
+		$/bond:mpd/C3H2	$/atom:mpd/C3	$/atom:mpd/H2
+		$/bond:mpd/C5H3	$/atom:mpd/C5	$/atom:mpd/H3
+		$/bond:mpd/N1H5	$/atom:mpd/N1	$/atom:mpd/H5

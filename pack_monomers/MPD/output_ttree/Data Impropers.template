@@ -1,0 +1,4 @@
+$/improper:bytype1 @/improper:GAFF/X-X-ca-ha $/atom:mpd/C $/atom:mpd/C3 $/atom:mpd/C2 $/atom:mpd/H1
+$/improper:bytype2 @/improper:GAFF/X-X-ca-ha $/atom:mpd/C1 $/atom:mpd/C2 $/atom:mpd/C $/atom:mpd/H
+$/improper:bytype3 @/improper:GAFF/X-X-ca-ha $/atom:mpd/C1 $/atom:mpd/C4 $/atom:mpd/C5 $/atom:mpd/H3
+$/improper:bytype4 @/improper:GAFF/X-X-ca-ha $/atom:mpd/C2 $/atom:mpd/C4 $/atom:mpd/C3 $/atom:mpd/H2

@@ -18,10 +18,9 @@
 		$/bond:mpd_tmc/C10C11	$/atom:mpd_tmc/C10	$/atom:mpd_tmc/C11
 		$/bond:mpd_tmc/C11C12	$/atom:mpd_tmc/C11	$/atom:mpd_tmc/C12
 		$/bond:mpd_tmc/C11N1	$/atom:mpd_tmc/C11	$/atom:mpd_tmc/N1
+		$/bond:mpd_tmc/C13O2	$/atom:mpd_tmc/C13	$/atom:mpd_tmc/O2
 		$/bond:mpd_tmc/C13O3	$/atom:mpd_tmc/C13	$/atom:mpd_tmc/O3
-		$/bond:mpd_tmc/C13O4	$/atom:mpd_tmc/C13	$/atom:mpd_tmc/O4
 		$/bond:mpd_tmc/C14O1	$/atom:mpd_tmc/C14	$/atom:mpd_tmc/O1
-		$/bond:mpd_tmc/C14O2	$/atom:mpd_tmc/C14	$/atom:mpd_tmc/O2
 		$/bond:mpd_tmc/C1H 	$/atom:mpd_tmc/C1	$/atom:mpd_tmc/H 
 		$/bond:mpd_tmc/C2H1	$/atom:mpd_tmc/C2	$/atom:mpd_tmc/H1
 		$/bond:mpd_tmc/C4H2	$/atom:mpd_tmc/C4	$/atom:mpd_tmc/H2
@@ -30,7 +29,5 @@
 		$/bond:mpd_tmc/C9H4	$/atom:mpd_tmc/C9	$/atom:mpd_tmc/H4
 		$/bond:mpd_tmc/C10H5	$/atom:mpd_tmc/C10	$/atom:mpd_tmc/H5
 		$/bond:mpd_tmc/C12H6	$/atom:mpd_tmc/C12	$/atom:mpd_tmc/H6
-		$/bond:mpd_tmc/O2H11	$/atom:mpd_tmc/O2	$/atom:mpd_tmc/H11
-		$/bond:mpd_tmc/O4H10	$/atom:mpd_tmc/O4	$/atom:mpd_tmc/H10
+		$/bond:mpd_tmc/O3H9	$/atom:mpd_tmc/O3	$/atom:mpd_tmc/H9
 		$/bond:mpd_tmc/N1H8	$/atom:mpd_tmc/N1	$/atom:mpd_tmc/H8
-		$/bond:mpd_tmc/N1H9	$/atom:mpd_tmc/N1	$/atom:mpd_tmc/H9
