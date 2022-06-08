@@ -19,19 +19,19 @@ output system.pdb
 
 structure MPD-L.pdb 
   number 7188
-  inside box 0. 0. 0. 200. 200. 200. 
+  inside box 0. 0. 0. 220. 220. 220. 
   resnumbers 3
 end structure
 
 structure TMC-L.pdb
   number 2943
-  inside box 0. 0. 0. 200. 200. 200.
+  inside box 0. 0. 0. 220. 220. 220.
   resnumbers 3
 end structure
 
 structure TMC-C.pdb
   number 2830
-  inside box 0. 0. 0. 200. 200. 200.
+  inside box 0. 0. 0. 220. 220. 220.
   resnumbers 3
 end structure
 
