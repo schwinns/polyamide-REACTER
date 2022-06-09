@@ -8,6 +8,7 @@ def get_thermo(filename):
     reading_file = True
     f = open(filename, 'r')
 
+    data = []
     while reading_file:
         # Get thermodynamic inputs and number of steps for run command
         for line in f:
@@ -67,7 +68,6 @@ def get_thermo(filename):
                         break
 
         # Read thermodynamic data
-        data = []
         for line in f:
             vals = line.split()
             
