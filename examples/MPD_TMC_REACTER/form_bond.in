@@ -20,7 +20,7 @@ include "cleanedpre_react.in.settings"
 molecule 	pre pre_molecule.data
 molecule	post post_molecule.data
 
-neighbor	2.5 bin
+neighbor		2.5 bin
 neigh_modify	every 1 delay 0 check yes
 
 minimize 	1.0e-6 1.0e-6 1000 10000
