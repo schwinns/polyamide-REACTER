@@ -15,7 +15,7 @@ gro = args.gro
 top = args.top
 output = args.output
 
-coordinate = md.load(gro, top=gro) # mdtraj atoms are 0-indexed
+coordinate = md.load(gro) # mdtraj atoms are 0-indexed
 topology = Topology(top) # Topology atoms are 1-indexed
 coords = coordinate.xyz[0,:,:]
 
@@ -31,9 +31,11 @@ out.write('\twrite("Data Atoms") {\n')
 out.write('\t\t# atomID\tmolID\tatomType\tcharge\tx\ty\tz\n')
 
 i = 0
+coord_atoms = []
 for atom in coordinate.top.atoms:
 
     top_atom = topology.atoms[i+1]
+    coord_atoms.append(i+1)
 
     atomID = top_atom['atom_name']
     molID = top_atom['residue']
@@ -60,13 +62,20 @@ for i in topology.bonds:
     a1 = bond['a1']
     a2 = bond['a2']
 
-    a1_name = topology.atoms[a1]['atom_name']
-    a2_name = topology.atoms[a2]['atom_name']
+    if a1 not in coord_atoms:
+        print('{} not in coordinate file, not writing bond to {}'.format(topology.atoms[a1]['atom_name'], output))
 
-    bond_name = a1_name + a2_name
+    elif a2 not in coord_atoms:
+        print('{} not in coordinate file, not writing bond to {}'.format(topology.atoms[a2]['atom_name'], output))
+    
+    else:
+        a1_name = topology.atoms[a1]['atom_name']
+        a2_name = topology.atoms[a2]['atom_name']
 
-    line = '\t\t$bond:{:<4}\t$atom:{:<2}\t$atom:{:<2}\n'.format(bond_name, a1_name, a2_name)
-    out.write(line)
+        bond_name = a1_name + a2_name
+
+        line = '\t\t$bond:{:<4}\t$atom:{:<2}\t$atom:{:<2}\n'.format(bond_name, a1_name, a2_name)
+        out.write(line)
 
 out.write('\t}\n\n')
 out.write('} # ' + mol)
