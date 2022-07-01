@@ -5817,41 +5817,23 @@ $/atom:mpd/H3   11       #"MPD-L.lt", line 17
 $/atom:mpd/H4   12       #"MPD-L.lt", line 18
 $/atom:mpd/N1   13       #"MPD-L.lt", line 19
 $/atom:mpd/H5   14       #"MPD-L.lt", line 20
-$/atom:tmc_l/C   15       #"TMC-L.lt", line 7
-$/atom:tmc_l/C1   16       #"TMC-L.lt", line 8
-$/atom:tmc_l/C2   17       #"TMC-L.lt", line 9
-$/atom:tmc_l/C3   18       #"TMC-L.lt", line 10
-$/atom:tmc_l/C4   19       #"TMC-L.lt", line 11
-$/atom:tmc_l/C5   20       #"TMC-L.lt", line 12
-$/atom:tmc_l/H   21       #"TMC-L.lt", line 13
-$/atom:tmc_l/H1   22       #"TMC-L.lt", line 14
-$/atom:tmc_l/H2   23       #"TMC-L.lt", line 15
-$/atom:tmc_l/C6   24       #"TMC-L.lt", line 16
-$/atom:tmc_l/C7   25       #"TMC-L.lt", line 17
-$/atom:tmc_l/C8   26       #"TMC-L.lt", line 18
-$/atom:tmc_l/O   27       #"TMC-L.lt", line 19
-$/atom:tmc_l/O1   28       #"TMC-L.lt", line 20
-$/atom:tmc_l/O2   29       #"TMC-L.lt", line 21
-$/atom:tmc_l/O3   30       #"TMC-L.lt", line 22
-$/atom:tmc_l/H3   31       #"TMC-L.lt", line 23
-$/atom:tmc_c/C   32       #"TMC-C.lt", line 7
-$/atom:tmc_c/C1   33       #"TMC-C.lt", line 8
-$/atom:tmc_c/C2   34       #"TMC-C.lt", line 9
-$/atom:tmc_c/C3   35       #"TMC-C.lt", line 10
-$/atom:tmc_c/C4   36       #"TMC-C.lt", line 11
-$/atom:tmc_c/C5   37       #"TMC-C.lt", line 12
-$/atom:tmc_c/H   38       #"TMC-C.lt", line 13
-$/atom:tmc_c/H1   39       #"TMC-C.lt", line 14
-$/atom:tmc_c/H2   40       #"TMC-C.lt", line 15
-$/atom:tmc_c/C6   41       #"TMC-C.lt", line 16
-$/atom:tmc_c/C7   42       #"TMC-C.lt", line 17
-$/atom:tmc_c/C8   43       #"TMC-C.lt", line 18
-$/atom:tmc_c/O   44       #"TMC-C.lt", line 19
-$/atom:tmc_c/O1   45       #"TMC-C.lt", line 20
-$/atom:tmc_c/O2   46       #"TMC-C.lt", line 21
+$/atom:tmc_c/C   15       #"TMC-C.lt", line 7
+$/atom:tmc_c/C1   16       #"TMC-C.lt", line 8
+$/atom:tmc_c/C2   17       #"TMC-C.lt", line 9
+$/atom:tmc_c/C3   18       #"TMC-C.lt", line 10
+$/atom:tmc_c/C4   19       #"TMC-C.lt", line 11
+$/atom:tmc_c/C5   20       #"TMC-C.lt", line 12
+$/atom:tmc_c/H   21       #"TMC-C.lt", line 13
+$/atom:tmc_c/H1   22       #"TMC-C.lt", line 14
+$/atom:tmc_c/H2   23       #"TMC-C.lt", line 15
+$/atom:tmc_c/C6   24       #"TMC-C.lt", line 16
+$/atom:tmc_c/C7   25       #"TMC-C.lt", line 17
+$/atom:tmc_c/C8   26       #"TMC-C.lt", line 18
+$/atom:tmc_c/O   27       #"TMC-C.lt", line 19
+$/atom:tmc_c/O1   28       #"TMC-C.lt", line 20
+$/atom:tmc_c/O2   29       #"TMC-C.lt", line 21
 $/mol:mpd/UNL   1       #"MPD-L.lt", line 7
-$/mol:tmc_l/UNL   2       #"TMC-L.lt", line 7
-$/mol:tmc_c/UNL   3       #"TMC-C.lt", line 7
+$/mol:tmc_c/UNL   2       #"TMC-C.lt", line 7
 $/bond:mpd/NC1   1       #"MPD-L.lt", line 25
 $/bond:mpd/CC1   2       #"MPD-L.lt", line 26
 $/bond:mpd/CC2   3       #"MPD-L.lt", line 27
@@ -5866,38 +5848,21 @@ $/bond:mpd/C2H1   11       #"MPD-L.lt", line 35
 $/bond:mpd/C3H2   12       #"MPD-L.lt", line 36
 $/bond:mpd/C5H3   13       #"MPD-L.lt", line 37
 $/bond:mpd/N1H5   14       #"MPD-L.lt", line 38
-$/bond:tmc_l/CC1   15       #"TMC-L.lt", line 28
-$/bond:tmc_l/CC3   16       #"TMC-L.lt", line 29
-$/bond:tmc_l/C1C2   17       #"TMC-L.lt", line 30
-$/bond:tmc_l/C1C8   18       #"TMC-L.lt", line 31
-$/bond:tmc_l/C2C5   19       #"TMC-L.lt", line 32
-$/bond:tmc_l/C3C4   20       #"TMC-L.lt", line 33
-$/bond:tmc_l/C3C6   21       #"TMC-L.lt", line 34
-$/bond:tmc_l/C4C5   22       #"TMC-L.lt", line 35
-$/bond:tmc_l/C5C7   23       #"TMC-L.lt", line 36
-$/bond:tmc_l/C6O1   24       #"TMC-L.lt", line 37
-$/bond:tmc_l/C7O2   25       #"TMC-L.lt", line 38
-$/bond:tmc_l/C8O   26       #"TMC-L.lt", line 39
-$/bond:tmc_l/C8O3   27       #"TMC-L.lt", line 40
-$/bond:tmc_l/CH   28       #"TMC-L.lt", line 41
-$/bond:tmc_l/C2H1   29       #"TMC-L.lt", line 42
-$/bond:tmc_l/C4H2   30       #"TMC-L.lt", line 43
-$/bond:tmc_l/O3H3   31       #"TMC-L.lt", line 44
-$/bond:tmc_c/CC1   32       #"TMC-C.lt", line 26
-$/bond:tmc_c/CC3   33       #"TMC-C.lt", line 27
-$/bond:tmc_c/C1C2   34       #"TMC-C.lt", line 28
-$/bond:tmc_c/C1C8   35       #"TMC-C.lt", line 29
-$/bond:tmc_c/C2C5   36       #"TMC-C.lt", line 30
-$/bond:tmc_c/C3C4   37       #"TMC-C.lt", line 31
-$/bond:tmc_c/C3C6   38       #"TMC-C.lt", line 32
-$/bond:tmc_c/C4C5   39       #"TMC-C.lt", line 33
-$/bond:tmc_c/C5C7   40       #"TMC-C.lt", line 34
-$/bond:tmc_c/C6O1   41       #"TMC-C.lt", line 35
-$/bond:tmc_c/C7O2   42       #"TMC-C.lt", line 36
-$/bond:tmc_c/C8O   43       #"TMC-C.lt", line 37
-$/bond:tmc_c/CH   44       #"TMC-C.lt", line 38
-$/bond:tmc_c/C2H1   45       #"TMC-C.lt", line 39
-$/bond:tmc_c/C4H2   46       #"TMC-C.lt", line 40
+$/bond:tmc_c/CC1   15       #"TMC-C.lt", line 26
+$/bond:tmc_c/CC3   16       #"TMC-C.lt", line 27
+$/bond:tmc_c/C1C2   17       #"TMC-C.lt", line 28
+$/bond:tmc_c/C1C8   18       #"TMC-C.lt", line 29
+$/bond:tmc_c/C2C5   19       #"TMC-C.lt", line 30
+$/bond:tmc_c/C3C4   20       #"TMC-C.lt", line 31
+$/bond:tmc_c/C3C6   21       #"TMC-C.lt", line 32
+$/bond:tmc_c/C4C5   22       #"TMC-C.lt", line 33
+$/bond:tmc_c/C5C7   23       #"TMC-C.lt", line 34
+$/bond:tmc_c/C6O1   24       #"TMC-C.lt", line 35
+$/bond:tmc_c/C7O2   25       #"TMC-C.lt", line 36
+$/bond:tmc_c/C8O   26       #"TMC-C.lt", line 37
+$/bond:tmc_c/CH   27       #"TMC-C.lt", line 38
+$/bond:tmc_c/C2H1   28       #"TMC-C.lt", line 39
+$/bond:tmc_c/C4H2   29       #"TMC-C.lt", line 40
 $/angle:bytype1  1
 $/angle:bytype2  2
 $/angle:bytype3  3
@@ -5939,30 +5904,6 @@ $/angle:bytype38  38
 $/angle:bytype39  39
 $/angle:bytype40  40
 $/angle:bytype41  41
-$/angle:bytype42  42
-$/angle:bytype43  43
-$/angle:bytype44  44
-$/angle:bytype45  45
-$/angle:bytype46  46
-$/angle:bytype47  47
-$/angle:bytype48  48
-$/angle:bytype49  49
-$/angle:bytype50  50
-$/angle:bytype51  51
-$/angle:bytype52  52
-$/angle:bytype53  53
-$/angle:bytype54  54
-$/angle:bytype55  55
-$/angle:bytype56  56
-$/angle:bytype57  57
-$/angle:bytype58  58
-$/angle:bytype59  59
-$/angle:bytype60  60
-$/angle:bytype61  61
-$/angle:bytype62  62
-$/angle:bytype63  63
-$/angle:bytype64  64
-$/angle:bytype65  65
 $/dihedral:bytype1  1
 $/dihedral:bytype2  2
 $/dihedral:bytype3  3
@@ -6021,41 +5962,6 @@ $/dihedral:bytype55  55
 $/dihedral:bytype56  56
 $/dihedral:bytype57  57
 $/dihedral:bytype58  58
-$/dihedral:bytype59  59
-$/dihedral:bytype60  60
-$/dihedral:bytype61  61
-$/dihedral:bytype62  62
-$/dihedral:bytype63  63
-$/dihedral:bytype64  64
-$/dihedral:bytype65  65
-$/dihedral:bytype66  66
-$/dihedral:bytype67  67
-$/dihedral:bytype68  68
-$/dihedral:bytype69  69
-$/dihedral:bytype70  70
-$/dihedral:bytype71  71
-$/dihedral:bytype72  72
-$/dihedral:bytype73  73
-$/dihedral:bytype74  74
-$/dihedral:bytype75  75
-$/dihedral:bytype76  76
-$/dihedral:bytype77  77
-$/dihedral:bytype78  78
-$/dihedral:bytype79  79
-$/dihedral:bytype80  80
-$/dihedral:bytype81  81
-$/dihedral:bytype82  82
-$/dihedral:bytype83  83
-$/dihedral:bytype84  84
-$/dihedral:bytype85  85
-$/dihedral:bytype86  86
-$/dihedral:bytype87  87
-$/dihedral:bytype88  88
-$/dihedral:bytype89  89
-$/dihedral:bytype90  90
-$/dihedral:bytype91  91
-$/dihedral:bytype92  92
-$/dihedral:bytype93  93
 $/improper:bytype1  1
 $/improper:bytype2  2
 $/improper:bytype3  3
@@ -6063,7 +5969,3 @@ $/improper:bytype4  4
 $/improper:bytype5  5
 $/improper:bytype6  6
 $/improper:bytype7  7
-$/improper:bytype8  8
-$/improper:bytype9  9
-$/improper:bytype10  10
-$/improper:bytype11  11
