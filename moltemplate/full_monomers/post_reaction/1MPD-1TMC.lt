@@ -30,9 +30,9 @@ import "gaff.lt"
 		$atom:C13	$mol:UNL	@atom:c 	0.6517	-1.6599999368190765	3.190000057220459	-1.0000000149011612
 		$atom:C14	$mol:UNL	@atom:c 	0.6517	-2.9600000381469727	-1.469999998807907	0.6599999964237213
 		$atom:O1	$mol:UNL	@atom:o 	-0.5425	-2.669999897480011	-2.5699999928474426	1.080000028014183
-		$atom:O2	$mol:UNL	@atom:oh	-0.6036	-0.820000022649765	4.020000100135803	-1.2700000405311584
-		$atom:O3	$mol:UNL	@atom:o 	-0.5425	6.949999928474426	-1.6200000047683716	-0.5099999904632568
-		$atom:O4	$mol:UNL	@atom:oh	-0.6036	7.919999957084656	-1.7200000584125519	-0.24000000208616257
+		$atom:O3	$mol:UNL	@atom:o 	-0.5425	-0.820000022649765	4.020000100135803	-1.2700000405311584
+		$atom:N1	$mol:UNL	@atom:nh	-0.8232	6.949999928474426	-1.6200000047683716	-0.5099999904632568
+		$atom:H8	$mol:UNL	@atom:hn	0.3948	7.919999957084656	-1.7200000584125519	-0.24000000208616257
 	}
 
 	write("Data Bond List") {
@@ -55,10 +55,9 @@ import "gaff.lt"
 		$bond:C9C10	$atom:C9	$atom:C10
 		$bond:C10C11	$atom:C10	$atom:C11
 		$bond:C11C12	$atom:C11	$atom:C12
+		$bond:C11N1	$atom:C11	$atom:N1
 		$bond:C13O3	$atom:C13	$atom:O3
-		$bond:C13O4	$atom:C13	$atom:O4
 		$bond:C14O1	$atom:C14	$atom:O1
-		$bond:C14O2	$atom:C14	$atom:O2
 		$bond:C1H 	$atom:C1	$atom:H 
 		$bond:C2H1	$atom:C2	$atom:H1
 		$bond:C4H2	$atom:C4	$atom:H2
@@ -67,6 +66,7 @@ import "gaff.lt"
 		$bond:C9H4	$atom:C9	$atom:H4
 		$bond:C10H5	$atom:C10	$atom:H5
 		$bond:C12H6	$atom:C12	$atom:H6
+		$bond:N1H8	$atom:N1	$atom:H8
 	}
 
 } # 1MPD-1TMC

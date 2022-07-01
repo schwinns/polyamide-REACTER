@@ -77,6 +77,7 @@ class Topology():
 
         # ATOMS DIRECTIVE #
         self.atoms = {}
+        self.atoms_by_name = {}  # create an additional attribute where atoms are accessible by name in topology file
         for line in f:
             # Go to bonds directive
             if line.startswith('[ bonds ]'):
@@ -89,6 +90,7 @@ class Topology():
                 atom = line.split()
                 atom_id = int(atom[0])
                 self.atoms[atom_id] = {
+                    'atom_id'   : int(atom[0]),
                     'type'      : atom[1],
                     'resnr'     : int(atom[2]),
                     'residue'   : atom[3],
@@ -97,6 +99,9 @@ class Topology():
                     'charge'    : float(atom[6]),
                     'mass'      : float(atom[7])
                 }
+
+                atom_name = atom[4]
+                self.atoms_by_name[atom_name] = self.atoms[atom_id]
 
         # BONDS DIRECTIVE #
         self.bonds = {}
