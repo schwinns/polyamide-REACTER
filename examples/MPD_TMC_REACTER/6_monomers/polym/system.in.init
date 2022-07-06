@@ -14,3 +14,6 @@
 
     pair_modify     mix arithmetic
     special_bonds   amber
+
+
+boundary  p p p

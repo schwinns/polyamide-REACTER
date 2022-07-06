@@ -22,30 +22,65 @@ molecule	post post_molecule.data
 
 neighbor		2.5 bin
 neigh_modify	every 1 delay 0 check yes
+dielectric 		10
 
 # Initial equilibration
 dump		init all xtc 500 init.xtc
-thermo          500
+dump_modify init pbc yes
+thermo_style    custom step temp press pe ke etotal epair ebond eangle edihed eimp vol lx ly lz
+thermo      500
 
-minimize 	1.0e-6 1.0e-6 1000 10000
+min_style   sd
+minimize 	0 0 10000 10000
 write_data	min.data
 
 timestep        1.0
+velocity all create 300.0 123456 dist gaussian
 
 fix 3 all nvt temp 300.0 300.0 100.0
-run           10000
+run           100000
 unfix 3
 
-fix 3 all npt temp 300 300 100 iso 1000 1000 100
-run           10000
-unfix 3
+# fix 3 all npt temp 300 300 100 iso 1 1 100
+# run           500
+# unfix 3
+
+# fix 3 all nvt temp 300.0 300.0 100.0
+# run           500
+# unfix 3
+
+# fix 3 all npt temp 300 300 100 iso 1 1 100
+# run           500
+# unfix 3
+
+# fix 3 all nvt temp 300.0 300.0 100.0
+# run           500
+# unfix 3
+
+# fix 3 all npt temp 300 300 100 iso 1 1 100
+# run           5000
+# unfix 3
+
+# fix 3 all nvt temp 300.0 300.0 100.0
+# run           5000
+# unfix 3
+
+# fix 3 all npt temp 300 300 100 iso 1 1 100
+# run           10000
+# unfix 3
+
+# fix 3 all nvt temp 300.0 300.0 100.0
+# run           10000
+# unfix 3
+
+# fix 3 all npt temp 300 300 100 iso 1 1 100
+# run           50000
+# unfix 3
 
 write_data	init.data
 
 # Polymerization
 dump 		polym all xtc 500 react.xtc
-
-fix 3 all npt temp 300 300 100 iso 1000 1000 100
 
 fix		fxrct all bond/react stabilization yes statted_grp .03 &
 		 react rxn1 all 100 0.0 3 pre post automap.data stabilize_steps 100
@@ -57,5 +92,17 @@ fix 		4 bond_react_MASTER_group temp/rescale 1 300.0 300.0 1 1
 thermo_style custom step f_fxrct[1]
 thermo          500
 run		      50000
+
+unfix 1
+unfix 4
+
+thermo_style    custom step temp press pe ke etotal epair ebond eangle edihed eimp vol lx ly lz
+thermo      500
+
+min_style   sd
+minimize 	0 0 10000 10000
+
+fix 3 all npt temp 300 300 100 iso 1 1 100
+run           50000
 
 write_data	output.data nofix
