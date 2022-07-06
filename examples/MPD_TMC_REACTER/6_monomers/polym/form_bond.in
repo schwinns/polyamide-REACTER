@@ -1,0 +1,61 @@
+
+
+# ----------------- Init Section -----------------
+
+include "system.in.init"
+
+
+# ----------------- Atom Definition Section -----------------
+
+read_data "cleanedsystem.data" extra/bond/per/atom 1 extra/angle/per/atom 12 extra/dihedral/per/atom 12 extra/improper/per/atom 12 extra/special/per/atom 12
+
+
+# ----------------- Settings Section -----------------
+
+include "cleanedsystem.in.settings"
+
+
+# ----------------- Run Section -----------------
+
+molecule 	pre pre_molecule.data
+molecule	post post_molecule.data
+
+neighbor		2.5 bin
+neigh_modify	every 1 delay 0 check yes
+
+# Initial equilibration
+dump		init all xtc 500 init.xtc
+thermo          500
+
+minimize 	1.0e-6 1.0e-6 1000 10000
+write_data	min.data
+
+timestep        1.0
+
+fix 3 all nvt temp 300.0 300.0 100.0
+run           10000
+unfix 3
+
+fix 3 all npt temp 300 300 100 iso 1000 1000 100
+run           10000
+unfix 3
+
+write_data	init.data
+
+# Polymerization
+dump 		polym all xtc 500 react.xtc
+
+fix 3 all npt temp 300 300 100 iso 1000 1000 100
+
+fix		fxrct all bond/react stabilization yes statted_grp .03 &
+		 react rxn1 all 100 0.0 3 pre post automap.data stabilize_steps 100
+
+fix 		1 statted_grp_REACT nvt temp 300.0 300.0 100
+
+fix 		4 bond_react_MASTER_group temp/rescale 1 300.0 300.0 1 1
+
+thermo_style custom step f_fxrct[1]
+thermo          500
+run		      50000
+
+write_data	output.data nofix
