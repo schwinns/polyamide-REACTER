@@ -20,19 +20,19 @@ include "cleanedsystem.in.settings"
 neighbor	    2.0 bin
 neigh_modify	every 1 delay 0 check yes
 timestep        2.0
+dielectric      10
 
-dump		    pre_polym all xtc 5000 pre_polym.xtc
+dump		    min all xtc 5000 min.xtc
 thermo_style    custom step temp press pe ke etotal epair ebond eangle edihed eimp vol
-thermo          500
+thermo          5000
 
 # Minimization 
-fix             walllo all wall/lj126 zlo EDGE 0.1 1.0 10.0
-fix             wallhi all wall/lj126 zhi EDGE 0.1 1.0 10.0
 min_style       sd
-minimize 	    0 1e-8 10000 10000
+minimize 	    0 1e-8 100000 100000
 write_data 	    min.data
 
 velocity all create 300.0 123456 dist gaussian
+dump		    pre_polym all xtc 5000 pre_polym.xtc
 
 # 500 ps NVT (0.5 ns total)
 fix 1 all nve
