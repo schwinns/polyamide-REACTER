@@ -4,8 +4,7 @@ read_restart pre_polym.restart
 
 # Other inputs
 
-include "system.in.init"
-include "cleanedsystem.in.settings"
+kspace_style    pppm 0.0001
 
 neighbor	    2.0 bin
 neigh_modify	every 1 delay 0 check yes
