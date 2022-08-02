@@ -50,12 +50,10 @@ variable new_bonds equal f_fxrct[1]
 if "${new_bonds} < ${max_bonds} && ${new_bonds} >= ${old_bonds} && ${counter} < 5" then &
 	unfix 1
 	unfix 2
-	unfix fxrct
 	next counter
 	jump SELF react
 
 write_data react.data nofix
-
 
 # Short post polymerization NPT run
 dump 	post all xtc 1000 npt.xtc
