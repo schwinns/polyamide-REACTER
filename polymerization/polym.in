@@ -1,0 +1,117 @@
+
+
+# ----------------- Init Section -----------------
+
+include "system.in.init"
+
+
+# ----------------- Atom Definition Section -----------------
+
+read_data "pre_polym.data" extra/bond/per/atom 1 extra/angle/per/atom 12 extra/dihedral/per/atom 12 extra/improper/per/atom 12 extra/special/per/atom 12
+
+
+# ----------------- Settings Section -----------------
+
+include "cleanedsystem.in.settings"
+
+
+# ----------------- Run Section -----------------
+
+molecule 	pre pre_molecule.data
+molecule	post post_molecule.data
+
+neighbor	    2.0 bin
+neigh_modify	every 1 delay 0 check yes
+timestep        2.0
+
+dump		    min all xtc 5000 min.xtc
+thermo_style    custom step temp press pe ke etotal epair ebond eangle edihed eimp vol
+thermo          5000
+
+# Minimization 
+min_style       sd
+minimize 	    0 1e-8 100000 100000
+write_data 	    min.data
+
+velocity all create 300.0 123456 dist gaussian
+dump		    pre_polym all xtc 5000 pre_polym.xtc
+
+# 500 ps NVT (0.5 ns total)
+fix 1 all nve
+fix 3 all temp/rescale 1 300.0 300.0 1.0 1.0
+run     250000
+unfix 1
+unfix 3
+
+write_restart pre_polym.restart
+
+# 500 ps NPT (1 ns total)
+fix 3 all npt temp 300 300 100 iso 1 1 100
+run           250000
+unfix 3
+
+write_restart pre_polym.restart
+
+# 500 ps NVT (1.5 ns total)
+fix 1 all nve
+fix 3 all temp/rescale 1 300.0 300.0 1.0 1.0
+run           250000
+unfix 1
+unfix 3
+
+write_restart pre_polym.restart
+
+# 500 ps NPT (2 ns total)
+fix 3 all npt temp 300 300 100 iso 1 1 100
+run           250000
+unfix 3
+
+write_restart pre_polym.restart
+
+# 500 ps NVT (2.5 ns total)
+fix 1 all nve
+fix 3 all temp/rescale 1 300.0 300.0 1.0 1.0
+run           250000
+unfix 1
+unfix 3
+
+write_restart pre_polym.restart
+
+# 500 ps NPT (3 ns total)
+fix 3 all npt temp 300 300 100 iso 1 1 100
+run           250000
+unfix 3
+
+write_restart pre_polym.restart
+
+# 500 ps NVT (3.5 ns total)
+fix 1 all nve
+fix 3 all temp/rescale 1 300.0 300.0 1.0 1.0
+run           250000
+unfix 1
+unfix 3
+
+write_restart pre_polym.restart
+
+# 500 ps NPT (4 ns total)
+fix 3 all npt temp 300 300 100 iso 1 1 100
+run           250000
+unfix 3
+
+write_restart pre_polym.restart
+
+# 500 ps NVT (4.5 ns total)
+fix 1 all nve
+fix 3 all temp/rescale 1 300.0 300.0 1.0 1.0
+run           250000
+unfix 1
+unfix 3
+
+write_restart pre_polym.restart
+
+# 500 ps NPT (5 ns total)
+fix 3 all npt temp 300 300 100 iso 1 1 100
+run           250000
+unfix 3
+
+write_data pre_polym.data

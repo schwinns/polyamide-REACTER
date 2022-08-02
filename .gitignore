@@ -4,4 +4,5 @@
 *.gif
 *.restart
 *.tga
+*.data
 *.DS_Store
