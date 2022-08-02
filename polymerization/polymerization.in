@@ -8,7 +8,7 @@ include "system.in.init"
 
 # ----------------- Atom Definition Section -----------------
 
-read_data "cleanedsystem.data" extra/bond/per/atom 1 extra/angle/per/atom 12 extra/dihedral/per/atom 12 extra/improper/per/atom 12 extra/special/per/atom 12
+read_data "polym_in.data" extra/bond/per/atom 1 extra/angle/per/atom 12 extra/dihedral/per/atom 12 extra/improper/per/atom 12 extra/special/per/atom 12
 
 
 # ----------------- Settings Section -----------------
