@@ -1,0 +1,43 @@
+#
+# A mixture of monomers (MPD-L, TMC-L, and TMC-C in ratio to have 51:49 of linear to crosslinked monomers)
+#
+
+# All the atoms from diferent molecules will be separated at least 2.0
+# Anstroms at the solution.
+
+tolerance 2.0
+
+# The file type of input and output files is PDB
+
+filetype pdb
+
+# The name of the output file
+
+output system.pdb
+
+# Box is 220 Angstroms
+
+structure MPD-L.pdb 
+  number 7188
+  inside box 0. 0. 0. 220. 220. 220. 
+  resnumbers 3
+end structure
+
+structure TMC-L.pdb
+  number 2943
+  inside box 0. 0. 0. 220. 220. 220.
+  resnumbers 3
+end structure
+
+structure TMC-C.pdb
+  number 2830
+  inside box 0. 0. 0. 220. 220. 220.
+  resnumbers 3
+end structure
+
+structure HOH.pdb
+  number 19653
+  inside box 0. 0. 0. 220. 220. 220.
+  resnumbers 3
+end structure
+
