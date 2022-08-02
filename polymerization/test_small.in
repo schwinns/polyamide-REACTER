@@ -47,15 +47,15 @@ thermo_style custom step temp press pe f_fxrct[1]
 run		      100 # run polymerization for 100 ps
 variable new_bonds equal f_fxrct[1]
 
-unfix 1
-unfix 2
-unfix fxrct
-
 if "${new_bonds} < ${max_bonds} && ${new_bonds} >= ${old_bonds} && ${counter} < 5" then &
+	unfix 1
+	unfix 2
+	unfix fxrct
 	next counter
 	jump SELF react
 
 write_data react.data nofix
+
 
 # Short post polymerization NPT run
 dump 	post all xtc 1000 npt.xtc
