@@ -45,7 +45,7 @@ fix 		2 bond_react_MASTER_group temp/rescale 1 300.0 300.0 1 1
 thermo_style custom step temp press pe f_fxrct[1]
 
 run		      100 # run polymerization for 100 ps
-variable new_bonds equal f_rxrct[1]
+variable new_bonds equal f_fxrct[1]
 
 unfix 1
 unfix 2
