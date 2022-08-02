@@ -1,0 +1,19 @@
+import "MPD-L.lt"
+import "TMC-L.lt"
+import "TMC-C.lt"
+import "TIP3P.lt"
+
+
+# The monomers must be listed instantiated in the same order
+# they appear in the .inp file:
+
+mpd = new MPD-L[7188]
+tmcL = new TMC-L[2943]
+tmcC = new TMC-C[2830]
+hoh = new TIP3P[19653]
+
+write_once("Data Boundary") {
+  0 220.0 xlo xhi
+  0 220.0 ylo yhi
+  0 220.0 zlo zhi
+}

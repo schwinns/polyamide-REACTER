@@ -1,0 +1,17 @@
+import "gaff.lt"
+
+TIP3P inherits GAFF {
+
+	write("Data Atoms") {
+    	$atom:O   $mol:. @atom:ow -0.834   0.0000000   0.00000 0.000000
+    	$atom:H1  $mol:. @atom:hw  0.417   0.756950327 0.00000 0.5858822766
+    	$atom:H2  $mol:. @atom:hw  0.417  -0.756950327 0.00000 0.5858822766
+	}
+
+	write("Data Bond List") {
+		# bondID	bondType	atomID1	atomID2
+		$bond:OH1 	$atom:O 	$atom:H1
+		$bond:OH2 	$atom:O 	$atom:H2
+	}
+
+} # HOH
