@@ -44,7 +44,7 @@ for line in mass_split[0].split('\n'):
     else:
         out.write(line + '\n')
 
-out.write('Massses')
+out.write('Masses')
 atom_split = mass_split[1].split('Atoms')
 out.write(atom_split[0])
 out.write('Atoms\n\n')

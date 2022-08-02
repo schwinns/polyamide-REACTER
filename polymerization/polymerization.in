@@ -31,6 +31,10 @@ dump 		polym all xtc 10000 react.xtc				# write to xtc file every 10 ps
 restart		1000 polym.restart.1 polym.restart.2 		# write restart every ps
 thermo      5000										# write thermodynamic data every 5 ps
 
+# Create walls
+fix             walllo all wall/lj126 zlo EDGE 0.1 1.0 10.0
+fix             wallhi all wall/lj126 zhi EDGE 0.1 1.0 10.0
+
 label   react
 fix		fxrct all bond/react stabilization yes statted_grp 0.03 &
 		 react rxn1 all 100 0.0 3 pre post automap.data stabilize_steps 100
