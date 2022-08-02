@@ -51,7 +51,7 @@ unfix 1
 unfix 2
 unfix fxrct
 
-if "${bonds} < ${max_bonds} && ${new_bonds} >= ${old_bonds} && ${counter} < 5" then &
+if "${new_bonds} < ${max_bonds} && ${new_bonds} >= ${old_bonds} && ${counter} < 5" then &
 	next counter
 	jump SELF react
 
